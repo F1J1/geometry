@@ -1,0 +1,6 @@
+# all files that could be bad
+
+	*.d
+	*.obj
+	*.o	
+	*.ko
