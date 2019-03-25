@@ -1,15 +1,2 @@
-<<<<<<< HEAD
 *.o
-*.d
-*.ko
-*.obj
-
-
-=======
-# all files that could be bad
-
-	*.d
-	*.obj
-	*.o	
-	*.ko
->>>>>>> 4d5c432cdc19caafb143b8f067f1918e7751d159
+*.exe
