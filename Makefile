@@ -1,2 +1,2 @@
-all:
-	gcc -Wall -o main.exe main.c -lm
+main: main.c
+	gcc -Wall -o main.exe main.c -lm 
