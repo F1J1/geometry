@@ -1,17 +1,21 @@
-CC = g++
+CC = gcc 
 CFLAGS = -c -Wall -Werror
+EXECUTABLE = main.exe 
+DIR = build
+DAR = src
+DUR = bin
 
-all: main.exe
 
-main.exe: main.o func.o hello.o
-	$(CC) main.o func.o -o main.exe
+all: $(DUR)/$(EXECUTABLE)
+	$(DIR)/main.o: $(DAR)/main.c 
+	$(CC) $(CFLAGS) $(DAR)/main.c -o $(DIR)/main.o 
 
-main.o: main.c
-	$(CC) $(CFLAGS) main.c
+$(DIR)/func.o: $(DAR)/func.c
+	$(CC) $(CFLAGS) -c $(DAR)/func.c -o $(DIR)/func.o 
 
-func.o: func.c
-	$(CC) $(CFLAGS) func.c
+$(DUR)/$(EXECUTABLE): $(DIR)/main.o $(DIR)/func.o
+	$(CC) $(DIR)/main.o $(DIR)/func.o -o $(DUR)/$(EXECUTABLE) -lm
+
 
 clean:
-	rm -rf *.o main.exe
-
+rm -rf build/ bin/
