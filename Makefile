@@ -1,21 +1,22 @@
 CC = gcc 
-CFLAGS = -c -Wall -Werror
-EXECUTABLE = main.exe 
-DIR = build
-DAR = src
-DUR = bin
+CFLAGS = -Wall -Werror
+EXECUTABLE = bin/main.exe 
+DIR = build/
+DAR = src/
+DUR = bin/
 
 
-all: $(DUR)/$(EXECUTABLE)
-	$(DIR)/main.o: $(DAR)/main.c 
-	$(CC) $(CFLAGS) $(DAR)/main.c -o $(DIR)/main.o 
+all: $(EXECUTABLE) 
 
-$(DIR)/func.o: $(DAR)/func.c
-	$(CC) $(CFLAGS) -c $(DAR)/func.c -o $(DIR)/func.o 
+$(EXECUTABLE): $(DIR)main.o  $(DIR)func.o
+	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(DIR)main.o $(DIR)func.o -lm
 
-$(DUR)/$(EXECUTABLE): $(DIR)/main.o $(DIR)/func.o
-	$(CC) $(DIR)/main.o $(DIR)/func.o -o $(DUR)/$(EXECUTABLE) -lm
+$(DIR)main.o: $(DAR)main.c 
+	$(CC) $(CFLAGS) -c -o $(DIR)main.o $(DAR)main.c -lm
 
+$(DIR)func.o: $(DAR)func.c
+	$(CC) $(CFLAGS) -c -o $(DIR)func.o $(DAR)func.c -lm
 
+.PHONY : clean
 clean:
-rm -rf build/ bin/
+	rm -rf $(EXECUTABLE) $(DIR)*.o
