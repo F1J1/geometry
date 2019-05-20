@@ -1,7 +1,7 @@
 #include "func.h"
 #include <math.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
   float x1, x2, y1, y2, r1, r2;
