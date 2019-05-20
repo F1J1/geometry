@@ -14,7 +14,6 @@ int main() {
 
   Math(x1, y1, r1, x2, y2, r2);
 
-
   printf("\n 1|Circle (%5.2f %5.2f %5.2f)", x1, y1, r1);
   printf("\n Perimetr = %5.2f", 2 * 3.14 * r1);
   printf("\n Plochad = %5.2f", 3.14 * r1 * r1);
