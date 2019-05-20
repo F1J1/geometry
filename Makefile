@@ -17,6 +17,6 @@ $(DIR)main.o: $(DAR)main.c
 $(DIR)func.o: $(DAR)func.c
 	$(CC) $(CFLAGS) -c -o $(DIR)func.o $(DAR)func.c -lm
 
-.PHONY : clean
+.PHONY: clean
 clean:
 	rm -rf $(EXECUTABLE) $(DIR)*.o
