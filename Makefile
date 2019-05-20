@@ -1,4 +1,4 @@
-CC = gcc 
+C = gcc 
 CFLAGS = -Wall -Werror
 EXECUTABLE = bin/main.exe 
 DIR = build/
@@ -19,4 +19,4 @@ $(DIR)func.o: $(DAR)func.c
 
 .PHONY: clean
 clean:
-	rm -rf $(EXECUTABLE) $(DIR)*.o
+	rm -rf $(DIR)*.o

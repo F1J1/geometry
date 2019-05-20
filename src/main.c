@@ -10,10 +10,10 @@ int main() {
 
   printf("Circle №2 : ");
   scanf("%f%f%f", &x2, &y2, &r2);
-
   float r = 0, peresechenie = 0;
 
   Math(x1, y1, r1, x2, y2, r2);
+
 
   printf("\n 1|Circle (%5.2f %5.2f %5.2f)", x1, y1, r1);
   printf("\n Perimetr = %5.2f", 2 * 3.14 * r1);

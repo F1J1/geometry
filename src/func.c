@@ -1,7 +1,7 @@
 #include "func.h"
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 float peresechenie = 0, r = 0;
 
